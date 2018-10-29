@@ -1,28 +1,28 @@
 [
     {
-        "id": "a4c11c23.8510a8",
+        "id": "d4cafedf.d756d",
         "type": "tab",
         "label": "FireEye To McAfee TIE",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "77fced6b.c87e8c",
+        "id": "b51461fd.9d64c",
         "type": "dxl-core-event out",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "",
         "topic": "/vendor/fireeye",
-        "client": "2d9cf81c.0f838",
+        "client": "52426a78.e99ff4",
         "x": 840,
         "y": 200,
         "wires": []
     },
     {
-        "id": "80e618eb.743da8",
+        "id": "a044a6e8.718848",
         "type": "dxl-tie-set-file-reputation",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "",
-        "client": "2d9cf81c.0f838",
+        "client": "52426a78.e99ff4",
         "trustLevel": "",
         "comment": "",
         "x": 850,
@@ -32,9 +32,9 @@
         ]
     },
     {
-        "id": "8fd71109.fa063",
+        "id": "efb295ba.4e5048",
         "type": "inject",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "FIreEye Major",
         "topic": "",
         "payload": "{   \"product\": \"MAS\",   \"appliance-id\": \"00:00:00:00:00:00\",   \"appliance\": \"fireeye-000000\",   \"alert\": {     \"src\": {       \"url\": \"/data/share/winxp-sp3/src/41281428cd6f503f948e931d546e340c.exe\"     },     \"severity\": \"majr\",     \"alert-url\": \"https://fireeye-000000/malware_analysis/analyses?maid=146658\",     \"explanation\": {       \"malware-detected\": {         \"malware\": {           \"malicious\": \"yes\",           \"executed-at\": \"2017-05-09T14:30:25Z\",           \"md5sum\": \"41281428cd6f503f948e931d546e340c\",           \"type\": \"exe\",           \"name\": \"Trojan.LuminosityLink\"         }       }     },     \"occurred\": \"2017-05-09T14:30:25Z\",     \"action\": \"notified\",     \"id\": \"146658\",     \"name\": \"malware-object\"   },   \"version\": \"7.7.5.577562\",   \"msg\": \"concise\" }",
@@ -47,31 +47,32 @@
         "y": 100,
         "wires": [
             [
-                "70e6d370.d3d2a4"
+                "6d3a3e1f.e1001"
             ]
         ]
     },
     {
-        "id": "7a0a876d.ce41d",
+        "id": "bb0aed99.66aef8",
         "type": "http in",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "",
         "url": "/fireeye",
         "method": "post",
-        "upload": false,
+        "upload": true,
         "swaggerDoc": "",
         "x": 110,
         "y": 280,
         "wires": [
             [
-                "70e6d370.d3d2a4"
+                "6d3a3e1f.e1001",
+                "56ba5c2e.a16b64"
             ]
         ]
     },
     {
-        "id": "70e6d370.d3d2a4",
+        "id": "6d3a3e1f.e1001",
         "type": "json",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "",
         "property": "payload",
         "action": "obj",
@@ -80,30 +81,30 @@
         "y": 60,
         "wires": [
             [
-                "f2003f3b.bcd64"
+                "4a125c62.726c2c"
             ]
         ]
     },
     {
-        "id": "2083597c.fb37c6",
+        "id": "fcf4f2ea.7e63f",
         "type": "dxl-core-event in",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "",
         "topic": "/vendor/fireeye",
-        "client": "2d9cf81c.0f838",
+        "client": "52426a78.e99ff4",
         "payloadType": "txt",
         "x": 120,
         "y": 360,
         "wires": [
             [
-                "95c1c37b.d5e118"
+                "8b01ce26.c7c14"
             ]
         ]
     },
     {
-        "id": "78e5d6b5.138c8",
+        "id": "7cc0faae.cf9e5c",
         "type": "change",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "Unknown",
         "rules": [
             {
@@ -123,15 +124,15 @@
         "y": 160,
         "wires": [
             [
-                "99ee18a6.9446a8",
-                "77fced6b.c87e8c"
+                "69842be.29e6854",
+                "b51461fd.9d64c"
             ]
         ]
     },
     {
-        "id": "99ee18a6.9446a8",
+        "id": "69842be.29e6854",
         "type": "debug",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "",
         "active": false,
         "tosidebar": true,
@@ -143,9 +144,9 @@
         "wires": []
     },
     {
-        "id": "73ffb79e.b1deb",
+        "id": "1f81a62e.92cb52",
         "type": "inject",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "FireEye Unknown",
         "topic": "",
         "payload": "{   \"product\": \"MAS\",   \"appliance-id\": \"00:00:00:00:00:00\",   \"appliance\": \"fireeye-000000\",   \"alert\": {     \"src\": {       \"url\": \"/data/share/winxp-sp3/src/41281428cd6f503f948e931d546e340c.exe\"     },     \"severity\": \"unkn\",     \"alert-url\": \"https://fireeye-000000/malware_analysis/analyses?maid=146658\",     \"explanation\": {       \"malware-detected\": {         \"malware\": {           \"malicious\": \"yes\",           \"executed-at\": \"2017-05-09T14:30:25Z\",           \"md5sum\": \"41281428cd6f503f948e931d546e340c\",           \"type\": \"exe\",           \"name\": \"Trojan.LuminosityLink\"         }       }     },     \"occurred\": \"2017-05-09T14:30:25Z\",     \"action\": \"notified\",     \"id\": \"146658\",     \"name\": \"malware-object\"   },   \"version\": \"7.7.5.577562\",   \"msg\": \"concise\" }",
@@ -158,14 +159,14 @@
         "y": 60,
         "wires": [
             [
-                "70e6d370.d3d2a4"
+                "6d3a3e1f.e1001"
             ]
         ]
     },
     {
-        "id": "93d504e5.21a7e",
+        "id": "7c145cdc.a7d834",
         "type": "inject",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "FireEye Minor",
         "topic": "",
         "payload": "{\"product\":\"MAS\",\"appliance-id\":\"00:00:00:00:00:00\",\"appliance\":\"fireeye-000000\",\"alert\":{\"src\":{\"url\":\"/data/share/winxp-sp3/src/41281428cd6f503f948e931d546e340c.exe\"},\"severity\":\"minr\",\"alert-url\":\"https://fireeye-000000/malware_analysis/analyses?maid=146658\",\"explanation\":{\"malware-detected\":{\"malware\":{\"malicious\":\"yes\",\"executed-at\":\"2017-05-09T14:30:25Z\",\"md5sum\":\"41281428cd6f503f948e931d546e340c\",\"type\":\"exe\",\"name\":\"Trojan.LuminosityLink\"}}},\"occurred\":\"2017-05-09T14:30:25Z\",\"action\":\"notified\",\"id\":\"146658\",\"name\":\"malware-object\"},\"version\":\"7.7.5.577562\",\"msg\":\"concise\"}",
@@ -178,14 +179,14 @@
         "y": 140,
         "wires": [
             [
-                "70e6d370.d3d2a4"
+                "6d3a3e1f.e1001"
             ]
         ]
     },
     {
-        "id": "d5f1403b.1be6c",
+        "id": "570e8de7.15840c",
         "type": "inject",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "Critical",
         "topic": "",
         "payload": "{\"product\":\"MAS\",\"appliance-id\":\"00:00:00:00:00:00\",\"appliance\":\"fireeye-000000\",\"alert\":{\"src\":{\"url\":\"/data/share/winxp-sp3/src/41281428cd6f503f948e931d546e340c.exe\"},\"severity\":\"crit\",\"alert-url\":\"https://fireeye-000000/malware_analysis/analyses?maid=146658\",\"explanation\":{\"malware-detected\":{\"malware\":{\"malicious\":\"yes\",\"executed-at\":\"2017-05-09T14:30:25Z\",\"md5sum\":\"41281428cd6f503f948e931d546e340c\",\"type\":\"exe\",\"name\":\"Trojan.LuminosityLink\"}}},\"occurred\":\"2017-05-09T14:30:25Z\",\"action\":\"notified\",\"id\":\"146658\",\"name\":\"malware-object\"},\"version\":\"7.7.5.577562\",\"msg\":\"concise\"}",
@@ -198,14 +199,14 @@
         "y": 180,
         "wires": [
             [
-                "70e6d370.d3d2a4"
+                "6d3a3e1f.e1001"
             ]
         ]
     },
     {
-        "id": "f2003f3b.bcd64",
+        "id": "4a125c62.726c2c",
         "type": "switch",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "FireEyeSeverity",
         "property": "payload.alert.severity",
         "propertyType": "msg",
@@ -238,23 +239,23 @@
         "y": 220,
         "wires": [
             [
-                "78e5d6b5.138c8"
+                "7cc0faae.cf9e5c"
             ],
             [
-                "45e25812.f12e3"
+                "f00bb4b0.961e28"
             ],
             [
-                "9bac26eb.1e03a"
+                "9758a579.3ab318"
             ],
             [
-                "78777a38.ad3e74"
+                "60c23720.01a9f8"
             ]
         ]
     },
     {
-        "id": "45e25812.f12e3",
+        "id": "f00bb4b0.961e28",
         "type": "change",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "might_be_malicious",
         "rules": [
             {
@@ -274,15 +275,15 @@
         "y": 200,
         "wires": [
             [
-                "77fced6b.c87e8c",
-                "99ee18a6.9446a8"
+                "b51461fd.9d64c",
+                "69842be.29e6854"
             ]
         ]
     },
     {
-        "id": "9bac26eb.1e03a",
+        "id": "9758a579.3ab318",
         "type": "change",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "known_malicious",
         "rules": [
             {
@@ -302,15 +303,15 @@
         "y": 240,
         "wires": [
             [
-                "77fced6b.c87e8c",
-                "99ee18a6.9446a8"
+                "b51461fd.9d64c",
+                "69842be.29e6854"
             ]
         ]
     },
     {
-        "id": "78777a38.ad3e74",
+        "id": "60c23720.01a9f8",
         "type": "change",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "known_malicious",
         "rules": [
             {
@@ -330,15 +331,15 @@
         "y": 280,
         "wires": [
             [
-                "77fced6b.c87e8c",
-                "99ee18a6.9446a8"
+                "b51461fd.9d64c",
+                "69842be.29e6854"
             ]
         ]
     },
     {
-        "id": "95c1c37b.d5e118",
+        "id": "8b01ce26.c7c14",
         "type": "json",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "",
         "property": "payload",
         "action": "obj",
@@ -347,14 +348,14 @@
         "y": 360,
         "wires": [
             [
-                "e77b2f00.179798"
+                "295824d8.d3bcbc"
             ]
         ]
     },
     {
-        "id": "29033d5f.a3120a",
+        "id": "998a84d3.91dbc",
         "type": "change",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "FileName",
         "rules": [
             {
@@ -374,14 +375,14 @@
         "y": 360,
         "wires": [
             [
-                "5e229ff1.498a8"
+                "e1f8d009.5c3ca8"
             ]
         ]
     },
     {
-        "id": "5e229ff1.498a8",
+        "id": "e1f8d009.5c3ca8",
         "type": "change",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "Comment",
         "rules": [
             {
@@ -401,37 +402,17 @@
         "y": 440,
         "wires": [
             [
-                "2f8d44b0.dc9fc4",
-                "80e618eb.743da8"
+                "35599244.5363ce",
+                "a044a6e8.718848"
             ]
         ]
     },
     {
-        "id": "84a21506.4062b",
-        "type": "dxl-core-service",
-        "z": "a4c11c23.8510a8",
-        "name": "TIE",
-        "serviceType": "TIE",
-        "client": "2d9cf81c.0f838",
-        "rules": [
-            {
-                "payloadType": "txt",
-                "topic": "/mcafee/service/tie/file/reputation/set"
-            }
-        ],
-        "outputs": 1,
-        "x": 190,
-        "y": 700,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2f8d44b0.dc9fc4",
+        "id": "35599244.5363ce",
         "type": "debug",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "",
-        "active": true,
+        "active": false,
         "tosidebar": true,
         "console": false,
         "tostatus": false,
@@ -441,9 +422,9 @@
         "wires": []
     },
     {
-        "id": "630daa26.3d396c",
+        "id": "7e0b4979.8d7068",
         "type": "change",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "TrustLevel",
         "rules": [
             {
@@ -463,14 +444,14 @@
         "y": 360,
         "wires": [
             [
-                "29033d5f.a3120a"
+                "998a84d3.91dbc"
             ]
         ]
     },
     {
-        "id": "e77b2f00.179798",
+        "id": "295824d8.d3bcbc",
         "type": "change",
-        "z": "a4c11c23.8510a8",
+        "z": "d4cafedf.d756d",
         "name": "MD5 Hash",
         "rules": [
             {
@@ -490,12 +471,26 @@
         "y": 360,
         "wires": [
             [
-                "630daa26.3d396c"
+                "7e0b4979.8d7068"
             ]
         ]
     },
     {
-        "id": "2d9cf81c.0f838",
+        "id": "56ba5c2e.a16b64",
+        "type": "debug",
+        "z": "d4cafedf.d756d",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "x": 341.5,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "52426a78.e99ff4",
         "type": "dxl-client",
         "z": "",
         "configFile": "/data/dxl/dxlclient.config",
