@@ -537,9 +537,9 @@
         "type": "http response",
         "z": "23e49c5a.b408a4",
         "name": "",
-        "statusCode": "200",
+        "statusCode": "",
         "headers": {},
-        "x": 880.5555555555555,
+        "x": 870.5555555555555,
         "y": 302.22222222222223,
         "wires": []
     }
